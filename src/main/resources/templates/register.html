@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Реєстрація пацієнта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css"  />
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"/>
+
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <form id="contact" th:action="@{/save}" method="post">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Дані пацієнта</legend>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12"><input placeholder="Прізвище" th:name="lastName" type="text" tabindex="1" required autofocus></div>
+                        <div class="col-sm-4 col-xs-12"><input placeholder="Ім'я" th:name="firstName" type="text"  tabindex="2" required></div>
+                        <div class="col-sm-4 col-xs-12"><input placeholder="По-батькові" th:name="middleName" type="text"  tabindex="3" required></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <label for="dateOfBirth">Дата народження</label>
+                            <input id="dateOfBirth" th:name="dateOfBirth" type="date" tabindex="4" required>
+                        </div>
+
+                        <div class="col-sm-4 col-xs-12">
+                            <label for="gender">Стать</label>
+                            <select id="gender" class="w-100" th:name="gender" type="" tabindex="6" required>
+                                <option selected="true" value="M">Чоловік</option>
+                                <option value="F">Жінка</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <br/>
+
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Деталі обстеження</legend>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <label for="observationDate">Дата обстеження</label>
+                           <input class="datetime" id="observationDate" th:name="observationDate" type="datetime-local" tabindex="4" required>
+
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <label for="modalityType">Тип обстеження</label>
+                            <select id="modalityType" th:name="observationTypeCode"  tabindex="6" required>
+                                <option th:each="key : ${modalities.keySet()}"
+                                        th:value="${key}"
+                                        th:utext="${modalities.get(key)}">
+                                </option>
+                            </select>
+
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <label for="procedure">Процедура</label>
+                            <input id="procedure" th:name="procedureCode" type="text" tabindex="7" required>
+                        </div>
+
+                    </div>
+                </fieldset>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-6 mx-auto">
+                        <button name="submit" type="submit">Реєстрація</button>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

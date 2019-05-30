@@ -1,0 +1,5 @@
+MSH|^~\&||CTCH|DCM4CHEE|CTCH|(DATE_SENDING)||ORM^O01|(MSG_ID)|P|2.3|
+PID|||(PATIENT_ID)^^||(PATIENT_LAST_NAME)^(PATIENT_FIRST_NAME)^^||(PATIENT_DATE_OF_BIRTH)|(PATIENT_GENDER)|||^^^^^|||||||||||||||||
+PV1||O||||||null null null|||||||||||^^^^||||||||||||||||||||||||||
+ORC|NW|(SOME_NUMBER)|||SC||^^^(OBSERVATION_DATE)^^|||||^^^^^||
+OBR||||^^^(PROCEDURE)^(MODALITY)^||||||||||||^^^^^||||||||(MODALITY)|||^^^^^|
